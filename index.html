@@ -4,145 +4,17 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-        <title>Odds?</title>
-
-        <style> 
-
-            .frame { 
-                max-width: 500px;
-                background-color: aqua;
-                margin: 0 auto; 
-                text-align: center;
-                color: rgba(200,0,255,1);
-            }
-
-            input {
-
-                background-color:  rgba(200,0,255,1);
-                color: aqua;
-
-            }
-
-          
-
-           
-        
-        </style> 
-    
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
         <div class="frame"> 
-            <h1> Odds?  </h1>
-
-            <h2 id="prompt"> In the range?  </h2>
-
+            <h1> Odds!? </h1>
+            <h2 id="prompt"> What is the range of your odds? (Enter a number greater than 1) </h2>
             <input id="form"> </input> 
             <button id="button"> Submit </button> 
-
-            
-
-
-
         </div>
 
-        <div id="input_form_container"> </div>
-
-        <script>
-
-            /*
-                enter range value
-                click submit 
-                save range value 
-                refresh html with new prompt
-                enter number 
-                click submit 
-
-                generate random number 
-                compare random number to picked number 
-
-                refresh html with winner or loss page and play again button
-
-                refresh html 
-
-
-            */   
-           
-            
-            var prompts = ['In the range?', 'Enter your number!']
-
-            var currentPrompt = 0; 
-            var range = 0; 
-            var yourNumber = -1; 
-
-            var buttonClicked = function() {
-
-                if (currentPrompt == 0) {
-                    range = $('input').val(); 
-                    document.getElementById('form').value = "";
-
-
-
-                    currentPrompt += 1; 
-                    document.getElementById("prompt").innerHTML = prompts[currentPrompt];
-
-                }
-                else if (currentPrompt == 1 ) {
-
-
-                    yourNumber = $('input').val();
-                    document.getElementById('form').value = "";
-
-                    currentPrompt += 1; 
-
-                    var min = Math.ceil(1);
-                    var max = Math.floor(range);
-                    var randomNumber = Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive
-
-
-                    
-
-                    if (yourNumber == randomNumber) {
-                        document.getElementById("prompt").innerHTML = "You Lose! Your number was " + yourNumber + ", the random number was " + randomNumber  + 
-                        "<br> Want to play again?";
-                    }
-                    else {
-                        document.getElementById("prompt").innerHTML = "You Win! Your number was " + yourNumber + ", the random number was " + randomNumber + 
-                        "<br> Want to play again?";
-                    }
-
-                    document.getElementById("button").innerHTML = "Play again?"
-                    $
-
-                    currentPrompt += 1; 
-                    $("input").hide();
-                   
-                    
-                }
-                else {
-                    currentPrompt = 0; 
-                    document.getElementById("prompt").innerHTML = prompts[currentPrompt];
-                    document.getElementById("button").innerHTML = "Submit";
-                    $("input").show();
-
-                }
-            }
-
-
-
-            $('button').click(function() {
-                buttonClicked();
-            }); 
-
-           
-     
-        
-        
-        
-        
-        </script>
-        
-    
+        <script src="script.js">  </script>
     </body>
 </html>
