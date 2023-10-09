@@ -38,7 +38,7 @@
 
             <h2 id="prompt"> In the range?  </h2>
 
-            <input class="form"> </input> 
+            <input id="form"> </input> 
             <button id="button"> Submit </button> 
 
             
@@ -80,6 +80,9 @@
 
                 if (currentPrompt == 0) {
                     range = $('input').val(); 
+                    document.getElementById('form').value = "";
+
+
 
                     currentPrompt += 1; 
                     document.getElementById("prompt").innerHTML = prompts[currentPrompt];
@@ -89,12 +92,14 @@
 
 
                     yourNumber = $('input').val();
+                    document.getElementById('form').value = "";
 
                     currentPrompt += 1; 
 
                     var min = Math.ceil(1);
                     var max = Math.floor(range);
                     var randomNumber = Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive
+
 
                     
 
@@ -123,6 +128,8 @@
 
                 }
             }
+
+
 
             $('button').click(function() {
                 buttonClicked();
