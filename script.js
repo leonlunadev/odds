@@ -127,7 +127,6 @@ $("button").click(function () {
       break;
     default:
       playAgain();
-
       break;
   }
 });
