@@ -11,3 +11,5 @@ This file holds the javascript code that runs the logic of the application. It a
 ## style.css
 
 This file holds the styling of the application
+
+TESTING GIT
